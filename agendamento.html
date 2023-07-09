@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="imagens/assessoria.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Agendamento</title>
+</head>
+<body>
+    <!-- Inicio do Header-->
+    <header style="background-image: url('imagens/empresarial-512x256.jpg');">
+        <!-- Inicio do container-->
+        <div class="container">
+            <nav>
+                <a href="home.html">
+                    <img src="imagens/assessoria.png" alt="Logo">
+                </a>
+                <ul class="ul">
+                    <a href="home.html">HOME</a>
+                    <a href="sobre.html">SOBRE</a>
+                    <a href="servicos.html">SERVIÇOS</a>
+                    <a href="contactos.html">CONTACTO</a>
+                    <a href="agendamento.html">AGENDAMENTO</a>
+                    <a class="btn" href="login">ENTRAR</a>
+                </ul>
+            </nav>
+            <section class="banner">
+                <div class="banner-text">
+                    <h1>Agendamento</h1>
+                    </div>
+                </section>
+            </div>
+            <!-- Fim do container-->
+        </header>   
+
+        <section class="agendamento">
+            <div class="container">
+                <h2>Preencha o Formulário</h2>
+                <form id="agendamentoForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data da consulta:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horário:</label>
+                        <select id="horario" name="horario" required>
+                            <option value="">Selecione um horário</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:00">12:00</option>
+                            <option value="11:00">14:00</option>
+                            <option value="11:00">15:00</option>
+                            <option value="11:00">16:00</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Agendar</button>
+                    </div>
+                    <div id="alertSuccess" class="alert success">Agendamento realizado com sucesso!</div>
+                    <div id="alertError" class="alert error">Ocorreu um erro. Por favor, tente novamente.</div>
+                  </div>
+                </section>
+              
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.js"></script>
+                <script>
+                  document.getElementById('agendamentoForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+              
+                    // Obter os valores dos campos do formulário
+                    var nome = document.getElementById('nome').value;
+                    var email = document.getElementById('email').value;
+                    var telefone = document.getElementById('telefone').value;
+                    var data = document.getElementById('data').value;
+                    var horario = document.getElementById('horario').value;
+                    var mensagem = document.getElementById('mensagem').value;
+                    
+              
+                    // Realizar o processamento e envio do formulário
+                    // Aqui você pode adicionar a lógica para enviar os dados de agendamento para o servidor
+              
+                    // Exibir o alerta de sucesso usando SweetAlert2
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Agendamento realizado com sucesso!',
+                      text: 'Nome: ' + nome + '\nE-mail: ' + email + '\nTelefone: ' + telefone + '\nData da consulta: ' + data + '\nHorário: ' + horario,
+                    });
+              
+                    // Limpar os campos do formulário
+                    document.getElementById('nome').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('telefone').value = '';
+                    document.getElementById('data').value = '';
+                    document.getElementById('horario').value = '';
+                    document.getElementById('mensagem').value = '';
+                  });
+                </script>
+               <footer class="footer">
+                <div class="container">
+                    <div class="links">
+                        <div class="outros1">
+                            <p><a href="Sobre.html">Sobre</a></p>
+                            <p><a href="Contactos.html">Contacto</a></p>
+                            <p><a href="Servicos.html">Serviços</a></p>
+                            <p><a href="#">Termos de uso</a></p>
+                        </div>
+                        <a href="#"><i class="fa fa-facebook"></i></a>  
+                        <a href="#"><i class="fa fa-instagram"></i></a>  
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <p>Desenvolvido por ConectaDev</p>  
+                    </div>
+                </div>
+            </footer>
+    </body>
+    </html>
