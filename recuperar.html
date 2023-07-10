@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imagens/assessoria.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Recuperação de Senha</title>
+  <style>
+    /* Estilos gerais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #03A6A6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    /* Estilos para a tela de recuperação de senha */
+    .recovery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .recovery-form {
+      max-width: 400px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .recovery-form h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333333;
+      text-align: center;
+    }
+
+    .recovery-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .recovery-form label {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #666666;
+      display: block;
+    }
+
+    .recovery-form input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #cccccc;
+      font-size: 16px;
+      color: #333333;
+    }
+
+    .recovery-form button[type="submit"] {
+      background-color: #04BFAD;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .recovery-form button[type="submit"]:hover {
+      background-color: #03A6A6;
+    }
+
+    .recovery-form button[type="submit"]:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="recovery">
+    <div class="recovery-form">
+      <h2>Recuperação de Senha</h2>
+      <form id="recoveryForm">
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Enviar E-mail de Recuperação</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.js"></script>
+  <script>
+    document.getElementById('recoveryForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Obter o valor do campo de e-mail
+      var email = document.getElementById('email').value;
+
+      // Realizar o processamento de recuperação de senha
+      // Aqui você pode adicionar a lógica para enviar um e-mail de recuperação de senha para o usuário
+
+      // Exibir o alerta de sucesso usando SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: 'E-mail de recuperação enviado com sucesso!',
+        text: 'Um e-mail de recuperação foi enviado para ' + email,
+        confirmButtonColor: '#04BFAD',
+        customClass: {
+          popup: 'swal-popup',
+          title: 'swal-title',
+          text: 'swal-text',
+          confirmButton: 'swal-button'
+        }
+      });
+
+      // Limpar o campo de e-mail
+      document.getElementById('email').value = '';
+    });
+  </script>
+  <footer class="footer">
+    <div class="container">
+        <div class="links">
+            <div class="outros1">
+                <p><a href="Sobre.html">Sobre</a></p>
+                <p><a href="Contactos.html">Contacto</a></p>
+                <p><a href="Servicos.html">Serviços</a></p>
+                <p><a href="#">Termos de uso</a></p>
+            </div>
+            <a href="#"><i class="fa fa-facebook"></i></a>  
+            <a href="#"><i class="fa fa-instagram"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <p>Desenvolvido por ConectaDev</p>  
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
